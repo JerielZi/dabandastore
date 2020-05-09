@@ -4,25 +4,20 @@
   <head>
     
     {% block head %}
-      <title>Gym Manager</title>
+      <title>DaBandaStore</title>
     {% endblock %}
     
     <link rel="stylesheet" href="/styles.css">
-    {# <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> #}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
 
   <body>
-    <header>
-      <div class="links">
-        <a href="/instructors">Instructors</a>
-        <a href="/members">Members</a>
-      </div>    
-  </header>
+    {% include 'parts/header.njk' %}
 
-  {% block content %}
+  {% block content %}{% endblock %}
 
-  {% endblock %}
-  <script src="/scripts.js"></script>
+    {% include 'parts/footer.njk' %}
 
   </body>
 
