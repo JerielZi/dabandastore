@@ -42,7 +42,7 @@
       name="price"
       placeholder="Preço do Produto"
       value ="{{ product.price }}"
-      {# Faremos uma mascara de dinheiro/euros #}
+      onkeyDown="Mask.apply(this, 'formatAKZ')"
     >
   </div>
   {% if product.old_price %}
