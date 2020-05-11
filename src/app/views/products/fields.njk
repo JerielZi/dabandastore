@@ -26,9 +26,7 @@
 <div class="item">
   <div>Descrição</div>
   <div>
-    <textarea name="description">
-      {{product.description}}
-    </textarea>
+    <textarea name="description">{{product.description}}</textarea>
   </div>
 </div>
 
@@ -62,9 +60,9 @@
   </div>
 </div>
 
-{% if product.status %}
+{% if (product.status) == '1' or (product.status == 0) %}
 <div class="item">
-  <div>Disponível</div>
+  <div>Disponível?</div>
   <div>
     <span> 
       <input 
