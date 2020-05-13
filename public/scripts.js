@@ -8,7 +8,7 @@ const Mask = {
   formatAKZ(value) {
     value = value.replace(/\D/g,"")
     
-    return new Intl.NumberFormat('pt-AO', {
+    return new Intl.NumberFormat('pt-BR', {
       style: 'currency', 
       currency: 'AKZ'
     }).format(value/100)

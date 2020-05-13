@@ -9,24 +9,32 @@
   </div>
 
   <div class="info">
-    <h1>Computador</h1>
+    <h1>{{product.name}}</h1>
 
     <div class="published">
-      Publicado em 13/05 as 15h
+      Publicado em {{product.published.day}} às {{product.published.hour}}
     </div>
 
     <div class="description">
-      Lorem ipsum dolor, sit amet consectetur adipiss Ipsam.
+      {{product.description}}
     </div>
 
     <div class="price-buy">
       <div class="price">
-        15.000,00 AKZ
+        {{product.price}}
 
-        <span class="old">14.500,00 AKZ</span>
+        {% if product.price !== product.old_price %}
+          <span class="old">{{product.old_price}}</span>
+        {% endif %}
       </div>
       <div class="buy">
-      <button class="button">Comprar</button>
+      {% if product.status == 0 %}
+        <p class="unavailable">Indisponível</p>
+      {% elseif product.quantity == 0 %}
+        <p class="unavailable">Fora de estoque</p>
+      {% else %}
+        <button class="button">Comprar</button>
+      {% endif %}
       </div>
     </div>
   </div>
