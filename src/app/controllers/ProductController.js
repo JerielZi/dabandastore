@@ -29,7 +29,7 @@ module.exports = {
 
     // Configurações para armazenamento de imagens
     if (req.files.length == 0)
-      return res.sen('Please, send at least one image')
+      return res.send('Please, send at least one image')
 
     let results = await Product.create(req.body)
     const productId = results.rows[0].id
@@ -63,7 +63,7 @@ module.exports = {
 
     // Imagens dos produtos
     results = await Product.files(product.id)
-    const files = results.rows.map(file =>({
+    let files = results.rows.map(file => ({
       ...file,
       src:`${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
     }))
@@ -73,7 +73,6 @@ module.exports = {
   },
   async edit(req, res) {
     let results = await Product.find(req.params.id)
-
     const product = results.rows[0]
 
     if (!product) return res.send("Product not found!")
