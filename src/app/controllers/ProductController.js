@@ -58,12 +58,12 @@ module.exports = {
       month
     }
 
-    product.old_price = formatPrice(product.old_price)
+    product.oldPrice = formatPrice(product.old_price)
     product.price = formatPrice(product.price)
 
     // Imagens dos produtos
     results = await Product.files(product.id)
-    let files = results.rows.map(file => ({
+    const files = results.rows.map(file => ({
       ...file,
       src:`${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
     }))

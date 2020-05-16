@@ -12,8 +12,7 @@
         <img 
         src="{{files[0].src}}" 
         alt="{{files[0].name}}"
-        onclick="Lightbox.open()"
-        >
+        onclick="Lightbox.open()">
       {% endif %}
 
       <div class="lightbox-target">
@@ -23,7 +22,7 @@
         class="lightbox-close"
         onclick="Lightbox.close()"
         >
-          <i class="material-icons">close</i>
+          <i class="material-icons">close</i> 
         </a>
       </div>
     </div>
@@ -35,8 +34,7 @@
           {% if loop.index0  == 0%}
             class="active"
           {% endif %}
-          onclick="ImageGallery.setImage(event)"
-        >
+          onclick="ImageGallery.setImage(event)">
       {% endfor %}
     </div>
   </div>
@@ -56,8 +54,8 @@
       <div class="price">
         {{product.price}}
 
-        {% if product.price !== product.old_price %}
-          <span class="old">{{product.old_price}}</span>
+        {% if product.price !== product.oldPrice %}
+          <span class="old">{{product.oldPrice}}</span>
         {% endif %}
       </div>
       <div class="buy">
